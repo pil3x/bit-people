@@ -1,12 +1,12 @@
 import React from 'react';
-import User from './UserItem.js';
+import { UserItem } from './UserItem.js';
 
 
 export const UserList = (props) => {
     return (
         <React.Fragment>
             {props.listOfUsers.map((user, index) => {
-                return <User key={index} name={user.name.first} email={user.email} image={user.picture.thumbnail} dob={user.dob.date} />
+                return <UserItem key={index} name={user.name} email={user.email} image={user.image} dob={user.dob} />
             })}
         </React.Fragment>
     )

@@ -1,5 +1,7 @@
 import React from 'react';
-import UserList from ''
+import { UserList } from '../users/UserList.js';
+
+
 
 const Main = (props) => {
     return (
@@ -8,3 +10,5 @@ const Main = (props) => {
         </div>
     )
 }
+
+export { Main }
