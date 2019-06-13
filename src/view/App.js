@@ -9,28 +9,18 @@ import { fetchUsers } from '../services/userService.js'
 
 import '../App.css';
 
-// const App = (props) => {
-//   fetchUsers()
-//   return (
-//     <div className="App">
-//       <Header title="BitPeople" />
-//       <Main users={users.results} />
-//       <Footer />
-//     </div>
-//   );
-// }
-
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       users: [],
-      holderClass: ''
+      isGrid: false,
+
     }
   }
 
   onButtonClick = () => {
-
+    this.setState({ isGrid: true })
   }
 
   componentDidMount() {
@@ -42,8 +32,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header title="BitPeople" />
-        <Main users={this.state.users} />
+        <Header onButtonClick={this.onButtonClick} title="BitPeople" />
+        <Main isGrid={this.state.isGrid} users={this.state.users} />
         <Footer />
       </div>
     );
