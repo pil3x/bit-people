@@ -32,6 +32,7 @@ class App extends React.Component {
   componentDidMount() {
     fetchUsers()
       .then(users => this.setState({ users: users }))
+
   }
 
   render() {

@@ -49,6 +49,11 @@ input.btn-grid {
   align-self: center;
 }
 
+.user-email > i,
+.user-birthday > i {
+  margin-right: 10px;
+}
+
 .user-info-holder p {
   margin: 0;
   font-weight: 500;
