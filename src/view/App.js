@@ -29,10 +29,6 @@ class App extends React.Component {
     }
   }
 
-  onListButtonClick = (e) => {
-
-  }
-
   componentDidMount() {
     fetchUsers()
       .then(users => this.setState({ users: users }))

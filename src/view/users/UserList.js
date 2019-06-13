@@ -6,7 +6,7 @@ export const UserList = (props) => {
     return (
         <React.Fragment>
             {props.listOfUsers.map((user, index) => {
-                return <UserItem key={index} name={user.name} email={user.email} image={user.image} dob={user.dob} />
+                return <UserItem key={index} name={user.name} email={user.hideEmail()} image={user.image} dob={user.dob} />
             })}
         </React.Fragment>
     )
