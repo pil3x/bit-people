@@ -22,7 +22,8 @@ input.btn-grid {
   margin-right: 10px;
 }
 
-.users-holder {
+.users-holder,
+.users-holder-card {
   padding: 20px 0;
 }
 
@@ -30,6 +31,30 @@ input.btn-grid {
   border: 1px solid #eee;
   padding: 15px;
   box-sizing: border-box;
+}
+
+.card-holder {
+  border: 1px solid #eee;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
+  -moz-box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
+  box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
+}
+
+.card-holder p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.card-holder .card-info-holder {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.users-holder-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .one-user:not(:last-child) {
@@ -43,6 +68,23 @@ input.btn-grid {
 .user-image-holder img {
   width: 100%;
   border-radius: 100%;
+}
+
+.card-image-holder {
+  position: relative;
+}
+
+.card-image-holder img {
+  width: 100%;
+}
+
+.card-image-holder .user-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  color: #fff;
+  text-transform: capitalize;
 }
 
 .user-info-holder {

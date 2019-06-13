@@ -5,6 +5,7 @@ class User {
         this.lastName = userObj.name.last;
         this.email = userObj.email;
         this.image = userObj.picture.thumbnail;
+        this.largeImage = userObj.picture.large;
         this.dob = userObj.dob.date;
 
     }
@@ -18,7 +19,12 @@ class User {
 
     getFormatDate = () => {
         const dateObj = new Date(this.dob);
-        return `${dateObj.getDate()}-${(dateObj.getMonth() + 1)}-${dateObj.getFullYear()}`
+        return `${dateObj.getDate()}-${(dateObj.getMonth() + 1)}-${dateObj.getFullYear()}`;
+    }
+
+    getFullName = () => {
+        return `${this.name.charAt(0).toUpperCase() + this.name.slice(1)} ${this.lastName.charAt(0).toUpperCase() + this.lastName.slice(1)}`;
+
     }
 }
 

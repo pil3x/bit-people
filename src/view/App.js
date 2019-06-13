@@ -25,8 +25,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       users: [],
-      layout: ''
+      holderClass: ''
     }
+  }
+
+  onButtonClick = () => {
+
   }
 
   componentDidMount() {

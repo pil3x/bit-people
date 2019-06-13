@@ -1,13 +1,13 @@
 import React from 'react';
-import { UserList } from '../users/UserList.js';
+// import { UserList } from '../users/UserList.js';
+import { UserCardList } from '../users/UserCardList.js';
 
 
 
 const Main = (props) => {
     return (
-        <div className="container users-holder">
-            <UserList listOfUsers={props.users} />
-        </div>
+        // <UserList listOfUsers={props.users} />
+        <UserCardList listOfUsers={props.users} />
     )
 }
 

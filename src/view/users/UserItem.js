@@ -1,21 +1,21 @@
 import React from 'react';
 
 const UserItem = (props) => {
-
+    const { user } = props;
     return (
         <div className="one-user row">
             <div className="user-image-holder col-1">
-                <img src={props.image} alt="" />
+                <img src={user.image} alt="" />
             </div>
             <div className="user-info-holder col-11">
-                <p className="user-name">Name: {props.name.charAt(0).toUpperCase() + props.name.slice(1)} {props.lastName.charAt(0).toUpperCase() + props.lastName.slice(1)}</p>
+                <p className="user-name">Name: {user.getFullName()}</p>
                 <p className="user-email">
-                    <i class="fas fa-envelope"></i>
-                    Email: {props.email}
+                    <i className="fas fa-envelope"></i>
+                    Email: {user.hideEmail()}
                 </p>
                 <p className="user-birthday">
-                    <i class="fas fa-birthday-cake"></i>
-                    Date of birth: {props.dob}
+                    <i className="fas fa-birthday-cake"></i>
+                    Date of birth: {user.getFormatDate()}
                 </p>
             </div>
         </div>
