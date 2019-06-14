@@ -15,8 +15,16 @@ class App extends React.Component {
     this.state = {
       users: [],
       isGrid: false,
-
     }
+  }
+
+  loadUsers() {
+    fetchUsers()
+      .then(users => this.setState({ users }))
+  }
+
+  onRefreshClick = () => {
+    this.loadUsers();
   }
 
   onButtonClick = () => {
@@ -28,15 +36,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetchUsers()
-      .then(users => this.setState({ users: users }))
+    this.loadUsers();
 
   }
 
   render() {
     return (
       <div className="App">
-        <Header onButtonClick={this.onButtonClick} isGrid={this.state.isGrid} title="BitPeople" />
+        <Header onButtonClick={this.onButtonClick} onRefreshClick={this.onRefreshClick} isGrid={this.state.isGrid} title="BitPeople" />
         <Main isGrid={this.state.isGrid} users={this.state.users} />
         <Footer />
       </div>

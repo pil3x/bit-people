@@ -6,9 +6,6 @@ footer {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 70px;
   padding: 10px;
   -webkit-box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
@@ -29,13 +26,16 @@ header a:hover {
   color: #eee;
 }
 
-input.btn-grid {
-  margin-right: 10px;
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  height: 100%;
 }
 
 .users-holder,
 .users-holder-card {
-  padding: 20px 0;
+  padding-top: 20px;
 }
 
 .btn-holders {
@@ -48,6 +48,11 @@ input.btn-grid {
 
 .btn-holders span {
   font-size: 20px;
+  padding: 20px;
+}
+
+.btn-holders span:hover {
+  background-color: rgba(173, 71, 71, 0.39);
 }
 
 .one-user {

@@ -12,7 +12,7 @@ const UserCard = (props) => {
                 <div className="card-info-holder">
                     <p className="user-email">
 
-                        Email: {user.hideEmail()}
+                        {user.hideEmail()}
                     </p>
                     <p className="user-birthday">
 
