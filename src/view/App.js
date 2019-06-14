@@ -5,16 +5,17 @@ import { Main } from './partials/Main.js';
 // import Counter from './partials/Counter.js';
 // import Likes from './partials/Likes.js';
 import { fetchUsers } from '../services/userService.js'
-
-
 import '../App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    const isGrid = JSON.parse(localStorage.getItem('isGrid')) || false;
+
     this.state = {
       users: [],
-      isGrid: false,
+      isGrid,
     }
   }
 
@@ -29,18 +30,23 @@ class App extends React.Component {
 
   onButtonClick = () => {
     this.setState((prevState, props) => {
+
+      const isGrid = !prevState.isGrid;
+
+      localStorage.setItem('isGrid', isGrid);
+
       return {
-        isGrid: !prevState.isGrid
+        isGrid
       }
     })
   }
 
   componentDidMount() {
     this.loadUsers();
-
   }
 
   render() {
+
     return (
       <div className="App">
         <Header onButtonClick={this.onButtonClick} onRefreshClick={this.onRefreshClick} isGrid={this.state.isGrid} title="BitPeople" />
