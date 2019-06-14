@@ -20,7 +20,11 @@ class App extends React.Component {
   }
 
   onButtonClick = () => {
-    this.setState({ isGrid: true })
+    this.setState((prevState, props) => {
+      return {
+        isGrid: !prevState.isGrid
+      }
+    })
   }
 
   componentDidMount() {
@@ -32,7 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header onButtonClick={this.onButtonClick} title="BitPeople" />
+        <Header onButtonClick={this.onButtonClick} isGrid={this.state.isGrid} title="BitPeople" />
         <Main isGrid={this.state.isGrid} users={this.state.users} />
         <Footer />
       </div>
