@@ -7,6 +7,7 @@ class User {
         this.image = userObj.picture.thumbnail;
         this.largeImage = userObj.picture.large;
         this.dob = userObj.dob.date;
+        this.gender = userObj.gender;
 
     }
 
@@ -25,6 +26,10 @@ class User {
     getFullName = () => {
         return `${this.name.charAt(0).toUpperCase() + this.name.slice(1)} ${this.lastName.charAt(0).toUpperCase() + this.lastName.slice(1)}`;
 
+    }
+
+    isFemale = () => {
+        return this.gender === 'female';
     }
 }
 

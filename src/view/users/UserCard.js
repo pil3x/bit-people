@@ -2,9 +2,10 @@ import React from 'react';
 
 const UserCard = (props) => {
     const { user } = props;
+    const femaleColor = user.isFemale() ? "is-female" : "";
     return (
         <div className="one-user-card col-4">
-            <div className="card-holder">
+            <div className={`card-holder ${femaleColor}`}>
                 <div className="card-image-holder">
                     <img src={user.largeImage} alt="" />
                     <h4 className="user-name">{user.name}</h4>

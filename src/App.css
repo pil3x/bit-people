@@ -8,9 +8,9 @@ footer {
 header {
   height: 70px;
   padding: 10px;
-  -webkit-box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
-  -moz-box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
-  box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(46, 46, 46, 0.31);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(46, 46, 46, 0.31);
+  box-shadow: 0px 2px 5px 0px rgba(46, 46, 46, 0.31);
 }
 
 header h1 {
@@ -62,11 +62,10 @@ header a:hover {
 }
 
 .card-holder {
-  border: 1px solid #eee;
   margin-bottom: 30px;
-  -webkit-box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
-  -moz-box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
-  box-shadow: 3px 9px 13px -9px rgba(46, 46, 46, 0.31);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(46, 46, 46, 0.31);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(46, 46, 46, 0.31);
+  box-shadow: 0px 1px 5px 0px rgba(46, 46, 46, 0.31);
 }
 
 .card-holder p {
@@ -79,6 +78,11 @@ header a:hover {
   box-sizing: border-box;
 }
 
+.card-holder.is-female,
+.one-user.is-female {
+  background-color: #ffebee;
+}
+
 .users-holder-card {
   display: flex;
   flex-wrap: wrap;
@@ -87,6 +91,9 @@ header a:hover {
 
 .one-user:not(:last-child) {
   border-bottom: none;
+}
+.one-user.is-female {
+  border-bottom: #fecdd3 3px solid;
 }
 
 .user-image-holder {

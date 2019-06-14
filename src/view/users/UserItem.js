@@ -2,8 +2,10 @@ import React from 'react';
 
 const UserItem = (props) => {
     const { user } = props;
+    const femaleColor = user.isFemale() ? "is-female" : "";
+
     return (
-        <div className="one-user row">
+        <div className={`one-user ${femaleColor} row`}>
             <div className="user-image-holder col-1">
                 <img src={user.image} alt="" />
             </div>
