@@ -16,6 +16,7 @@ class App extends React.Component {
     this.state = {
       users: [],
       isGrid,
+      inputValue: ''
     }
   }
 
@@ -38,7 +39,24 @@ class App extends React.Component {
       return {
         isGrid
       }
-    })
+    });
+  }
+
+  // filterUsers = (e) => {
+  //   let updatedUsers = this.state.users;
+  //   updatedUsers = updatedUsers.filter(user => user.search(e.target.value) !== -1)
+  //   return updatedUsers;
+  // }
+
+  // onSearchType = () => {
+  //   const bla = this.filterUsers();
+  //   return this.setState({ users: bla })
+  // }
+
+
+  //SREDI TOLOWERCASE!!!
+  onInputChange = (e) => {
+    this.setState({ inputValue: e.target.value })
   }
 
   componentDidMount() {
@@ -46,11 +64,16 @@ class App extends React.Component {
   }
 
   render() {
+    const { users, inputValue } = this.state;
+
+    const updatedUsers = users.filter((user) => {
+      return user.name.indexOf(inputValue) !== -1;
+    });
 
     return (
       <div className="App">
         <Header onButtonClick={this.onButtonClick} onRefreshClick={this.onRefreshClick} isGrid={this.state.isGrid} title="BitPeople" />
-        <Main isGrid={this.state.isGrid} users={this.state.users} />
+        <Main onInputChange={this.onInputChange} inputValue={inputValue} isGrid={this.state.isGrid} users={updatedUsers} />
         <Footer />
       </div>
     );

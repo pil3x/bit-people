@@ -31,6 +31,8 @@ class User {
     isFemale = () => {
         return this.gender === 'female';
     }
+
+
 }
 
 

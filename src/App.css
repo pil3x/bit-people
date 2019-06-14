@@ -32,10 +32,37 @@ header a:hover {
   padding: 0;
   height: 100%;
 }
+.search-holder {
+  margin-top: 20px;
+}
 
-.users-holder,
+.search-holder .search-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px 10px 10px 40px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.search-holder .search-input::placeholder {
+  color: rgb(207, 207, 207);
+}
+
+.search-holder .users-holder,
 .users-holder-card {
   padding-top: 20px;
+}
+
+.icon-holder {
+  position: relative;
+}
+
+.icon-holder i {
+  position: absolute;
+  top: 3px;
+  left: 10px;
 }
 
 .btn-holders {
@@ -83,6 +110,9 @@ header a:hover {
   background-color: #ffebee;
 }
 
+.users-holder {
+  margin-top: 20px;
+}
 .users-holder-card {
   display: flex;
   flex-wrap: wrap;
