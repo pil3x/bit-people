@@ -67,7 +67,7 @@ class App extends React.Component {
     const { users, inputValue } = this.state;
 
     const updatedUsers = users.filter((user) => {
-      return user.name.indexOf(inputValue) !== -1;
+      return user.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
     });
 
     return (
