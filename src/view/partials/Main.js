@@ -7,6 +7,7 @@ const Main = (props) => {
     const { onInputChange, inputValue } = props;
 
     return (
+        
         <div className="container">
             <div className="row">
 

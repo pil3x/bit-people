@@ -1,4 +1,5 @@
 import React from 'react';
+import { Preloader } from './partials/Preloader.js'
 import { Header } from './partials/Header.js';
 import { Footer } from './partials/Footer.js';
 import { Main } from './partials/Main.js';
@@ -14,6 +15,7 @@ class App extends React.Component {
     const isGrid = JSON.parse(localStorage.getItem('isGrid')) || false;
 
     this.state = {
+      loading: true,
       users: [],
       isGrid,
       inputValue: ''
@@ -25,8 +27,20 @@ class App extends React.Component {
       .then(users => this.setState({ users }))
   }
 
+  onLoadUsers = () => {
+    this.setState(prevState => {
+      return {
+        loading: !prevState.loading
+      }
+    })
+
+  }
+
   onRefreshClick = () => {
-    this.loadUsers();
+    this.setState({loading : true}, () => {
+      fetchUsers()
+      .then(users => this.setState({ loading: false , users}))
+    })
   }
 
   onButtonClick = () => {
@@ -42,29 +56,17 @@ class App extends React.Component {
     });
   }
 
-  // filterUsers = (e) => {
-  //   let updatedUsers = this.state.users;
-  //   updatedUsers = updatedUsers.filter(user => user.search(e.target.value) !== -1)
-  //   return updatedUsers;
-  // }
-
-  // onSearchType = () => {
-  //   const bla = this.filterUsers();
-  //   return this.setState({ users: bla })
-  // }
-
-
-  //SREDI TOLOWERCASE!!!
   onInputChange = (e) => {
     this.setState({ inputValue: e.target.value })
   }
 
   componentDidMount() {
+    this.onLoadUsers();
     this.loadUsers();
   }
 
   render() {
-    const { users, inputValue } = this.state;
+    const { loading, users, inputValue } = this.state;
 
     const updatedUsers = users.filter((user) => {
       return user.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
@@ -73,7 +75,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header onButtonClick={this.onButtonClick} onRefreshClick={this.onRefreshClick} isGrid={this.state.isGrid} title="BitPeople" />
-        <Main onInputChange={this.onInputChange} inputValue={inputValue} isGrid={this.state.isGrid} users={updatedUsers} />
+        {users.length === 0 || loading?
+          <Preloader />
+          :
+          <Main onInputChange={this.onInputChange} inputValue={inputValue} isGrid={this.state.isGrid} users={updatedUsers} />
+        }        
         <Footer />
       </div>
     );

@@ -8,7 +8,7 @@ export const Header = (props) => {
             <div className="container header-inner">
                 <a href="index.html"><h2>{title}</h2></a>
                 <div className="btn-holders">
-                    <span onClick={onRefreshClick}>
+                    <span  onClick={onRefreshClick}>
                         <i className="fas fa-redo"></i>
                     </span>
                     <span onClick={onButtonClick}>
