@@ -66,7 +66,7 @@ class UserPage extends React.Component {
         const { inputValue, loading, users } = this.state;
 
         const updatedUsers = users.filter((user) => {
-            return user.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
+            return user.getFullName().toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
         });
 
         return (
