@@ -1,5 +1,7 @@
 import React from 'react';
 
+import MenuItems from './MenuItems.js';
+
 export const Header = (props) => {
     const { title, onButtonClick, isGrid, onRefreshClick } = props;
 
@@ -8,7 +10,9 @@ export const Header = (props) => {
             <div className="container header-inner">
                 <a href="index.html"><h2>{title}</h2></a>
                 <div className="btn-holders">
-                    <span  onClick={onRefreshClick}>
+                    <MenuItems />
+
+                    <span onClick={onRefreshClick}>
                         <i className="fas fa-redo"></i>
                     </span>
                     <span onClick={onButtonClick}>
