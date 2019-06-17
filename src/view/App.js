@@ -11,12 +11,8 @@ class App extends React.Component {
   render() {
     return (
       < div className="App" >
-
-        {/* <Route exact path="/about" component={About} />
-        <Route path="/" component={UserPage} /> */}
-
         <Switch>
-          <Route exact path="/about" component={About} />
+          <Route path="/about" component={About} />
           <Route path="/" component={UserPage} />
         </Switch>
         <Footer />

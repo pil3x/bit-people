@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 import MenuItems from './MenuItems.js';
 
 export const Header = (props) => {
@@ -8,7 +8,7 @@ export const Header = (props) => {
     return (
         <header className='container-fluid'>
             <div className="container header-inner">
-                <a href="index.html"><h2>{title}</h2></a>
+                <Link to="/"><h2>{title}</h2></Link>
                 <div className="btn-holders">
                     <MenuItems />
 

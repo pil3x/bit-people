@@ -1,12 +1,14 @@
 import React from 'react';
 import { UserList } from '../users/UserList.js';
 import { UserCardList } from '../users/UserCardList.js';
+import ErrorContent from './Error.js';
 
 
 const Main = (props) => {
-    const { onInputChange, inputValue } = props;
+    const { onInputChange, inputValue, users } = props;
 
     return (
+
 
         <div className="container main-holder">
             <div className="row">
@@ -17,7 +19,9 @@ const Main = (props) => {
                 </div>
 
             </div>
-            {props.isGrid ? <UserCardList listOfUsers={props.users} /> : <UserList listOfUsers={props.users} />}
+            {users.length === 0 ?
+                <ErrorContent /> :
+                props.isGrid ? <UserCardList listOfUsers={props.users} /> : <UserList listOfUsers={props.users} />}
         </div>
     )
 }

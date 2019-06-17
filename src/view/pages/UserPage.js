@@ -69,6 +69,8 @@ class UserPage extends React.Component {
             return user.getFullName().toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
         });
 
+
+
         return (
             <React.Fragment>
                 <Header onButtonClick={this.onButtonClick} onRefreshClick={this.onRefreshClick} isGrid={this.state.isGrid} title="BitPeople" />
@@ -82,5 +84,4 @@ class UserPage extends React.Component {
     }
 
 }
-
 export default UserPage;
